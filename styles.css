@@ -1,0 +1,94 @@
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+}
+
+header nav#top-nav {
+    background-color: #000;
+    color: rgba(255,255,255,0.6);
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+    padding: 7px 20px 10px;
+}
+
+header nav#top-nav .active { color: #FFF; }
+
+header nav#top-nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+header nav#top-nav #top-right-nav li:last-child { margin-right: 0; }
+
+header nav#main-nav {
+    background-color: #FFF;
+    color: #AAA;
+    font-family: 'Share Tech Mono', monospace;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+header nav#main-nav ul li {
+    float: left;
+    margin-right: 20px;
+}
+
+header nav#main-nav #main-left-nav {
+    padding: 15px 0 15px 20px;
+}
+
+header nav#main-nav #main-right-nav {
+    border-left: 1px solid #AAA;
+    padding: 15px 0 5px 20px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    align-items: center;
+}
+
+header nav#main-nav .search svg {
+    height: 16px;
+    fill: #AAA;
+}
+
+header nav#main-nav #tnw2020-countdown {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    align-items: center;
+}
+
+header nav#main-nav #tnw2020-countdown>*:not(:last-child) {
+    margin-right: 20px;
+}
+
+header nav#main-nav #tnw2020-countdown svg {
+    height: 14px;
+}
+
+header nav#main-nav #tnw2020-countdown .countdown {
+    color: #FF4422;
+    font-size: 22px;
+}
+
+header nav#main-nav #tnw2020-countdown button {
+    background: #00CCCC;
+    border: none;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #FFF;
+    letter-spacing: 0.05em;
+    padding: 8px 15px;
+    border-radius: 4px;
+}
+
+header .alert {
+    background-color: #FFDD33;
+    padding: 10px 20px;
+    font-size: 12px;
+}
