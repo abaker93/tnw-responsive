@@ -11,7 +11,15 @@ h3 {
 	margin-bottom: 20px;
 }
 
+svg { height: 16px; }
+
 /* HEADER */
+
+header#header {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+}
 
 header nav#top-nav {
 	background-color: #000;
@@ -204,8 +212,7 @@ section#hero article header.story-header .byline>* {
 
 section#hero article header.story-header svg {
 	fill: rgba(255,255,255,0.5);
-	height: 16px;
-	margin: 
+	height: 16px; 
 }
 
 /* ADS */
@@ -246,3 +253,285 @@ section#latest-news article h4 {
 }
 
 section#latest-news article .byline { color: #AAA; }
+
+/* LATEST FUNDING */
+
+section#latest-funding {
+	max-width: 1200px;
+	margin: 50px auto;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-column-gap: 20px;
+}
+
+section#latest-funding header {
+	grid-column: 1 / 5;
+	display: grid;
+	grid-template-columns: repeat(2, auto);
+	justify-content: space-between;
+}
+
+section#latest-funding header p {
+	color: #F42;
+	font-size: 16px;
+	align-self: end;
+	margin-bottom: 20px;
+}
+
+section#latest-funding article { position: relative; }
+
+section#latest-funding article img {
+	height: 60px;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+section#latest-funding h4 {
+	background-color: #F42;
+	color: #FFF;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 10px 10px 10px 80px;
+}
+
+section#latest-funding .funding {
+	background-color: #FFEBE7;
+	padding: 10px 10px 10px 80px;
+}
+
+section#latest-funding .funding p:first-child {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+section#latest-funding .funding p:last-child {
+	font-size: 12px;
+	font-family: 'Share Tech Mono', monospace;
+	text-transform: uppercase;
+	opacity: 0.5;
+}
+
+section#latest-funding .info {
+	background-color: #FFFAF8;
+	font-size: 12px;
+	color: #555;
+}
+
+section#latest-funding .info p>* { vertical-align: middle; }
+
+section#latest-funding .info p svg { margin-right: 5px; }
+
+section#latest-funding .info p span { color: #AAA; }
+
+section#latest-funding .info p:first-child { padding: 20px 20px 15px; }
+
+section#latest-funding .info p:nth-child(2) { padding: 0 20px 20px; }
+
+section#latest-funding .info p:last-child {
+	border-top: 1px solid rgba(255,68,34,0.5);
+	padding: 20px;
+}
+
+/* NEWS CATEGORIES */
+
+section#news-categories {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-column-gap: 30px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+section#news-categories article {
+	margin-bottom: 70px;
+}
+
+section#news-categories article .cover-story {
+	width: 100%;
+	height: 270px;
+	position: relative;
+	color: #FFF;
+	display: grid;
+	align-items: end;
+}
+
+section#news-categories article .bkgd-photo,
+section#news-categories article .bkgd-gradient-1 {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -20;
+	background-size: cover;
+	background-position: center;
+}
+
+section#news-categories article .bkgd-gradient-1 {
+	background-image: url('img/image-gradient.png');
+	background-size: 100% 100%;
+}
+
+section#news-categories article .cover-story .title { padding: 20px; }
+
+section#news-categories article .cover-story .title .category,
+section#news-categories article .latest-story .title .category {
+	font-family: 'Share Tech Mono', monospace;
+	text-transform: uppercase;
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+
+section#news-categories article .cover-story .title h4 {
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+section#news-categories article .cover-story .title .byline {
+	color: rgb(255,255,255,0.5);
+}
+
+section#news-categories article .latest-story {
+	background-color: #FFEBE7;
+	color: #F42;
+	margin-top: 2px;
+	min-height: 102px;
+}
+
+section#news-categories article .latest-story .title {
+	display: grid;
+	grid-template-columns: repeat(2, auto);
+	grid-column-gap: 20px;
+	min-height: 102px;
+}
+
+section#news-categories article .latest-story .title .category {
+	padding: 15px 15px 0;
+}
+
+section#news-categories article .latest-story h4 {
+	font-weight: bold;
+	font-size: 14px;
+	padding: 0 15px 15px;
+}
+
+section#news-categories article .latest-story .image {
+	height: 100%;
+	width: 96px;
+	grid-column: 2 / 3;
+	grid-row: 1 / 3;
+	background-size: cover;
+	background-position: center;
+}
+
+section#news-categories article ul li {
+	padding-left: 1em;
+	color: #555;
+	padding: 10px 0 10px 1em;
+	border-bottom: 1px solid #EEE;
+}
+
+section#news-categories article ul li:before {
+	content: "\2022";
+	color: #F42;
+	display: inline-block;
+	width: 1em;
+	margin-left: -1em;
+}
+
+/* LATEST DEALS */
+
+section#latest-deals {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	column-gap: 20px;
+}
+
+section#latest-deals header {
+	grid-column: 1 / 5;
+	display: grid;
+	grid-template-columns: repeat(2, auto);
+}
+
+section#latest-deals article .image {
+	width: 100%;
+	padding-top: 80%;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+
+section#latest-deals article .image .discount {
+	position: absolute;
+	background-color: #FFDD33;
+	top: -15px;
+	right: -60px;
+	transform: rotate(42deg);
+	padding: 40px 50px 10px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+section#latest-deals article h4 {
+	font-weight: bold;
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+section#latest-deals article .price {
+	font-size: 16px;
+	margin-bottom: 30px;
+}
+
+section#latest-deals article .price span {
+	font-size: 14px;
+	color: #AAA;
+	text-decoration: line-through;
+}
+
+/* FOOTER */
+
+footer {
+	background-color: #131313;
+	color: rgba(255,255,255,0.5);
+}
+
+footer .social {
+	padding: 40px 0 20px;
+	text-align: center;
+}
+
+footer .social li {
+	display: inline-block;
+	padding: 10px 10px 7px;
+	background-color: rgba(255,255,255,0.15);
+	border-radius: 50%;
+}
+
+footer .social svg {
+	fill: #FFF;
+}
+
+footer .footer-nav {
+	padding: 0 0 px;
+	text-align: center;
+	font-family: 'Share Tech Mono', monospace;
+	text-transform: uppercase;
+}
+
+footer .footer-nav li {
+	display: inline-block;
+	margin: 0 10px;
+}
+
+footer .copyright {
+	background-color: #000;
+	padding: 40px;
+	text-align: center;
+}
