@@ -21,7 +21,7 @@ header#header {
 	z-index: 100;
 }
 
-header nav#top-nav {
+header#header nav#top-nav {
 	background-color: #000;
 	color: rgba(255,255,255,0.6);
 	display: grid;
@@ -30,16 +30,16 @@ header nav#top-nav {
 	padding: 7px 20px 10px;
 }
 
-header nav#top-nav .active { color: #FFF; }
+header#header nav#top-nav .active { color: #FFF; }
 
-header nav#top-nav ul li {
+header#header nav#top-nav ul li {
 	display: inline-block;
 	margin-right: 10px;
 }
 
-header nav#top-nav #top-right-nav li:last-child { margin-right: 0; }
+header#header nav#top-nav #top-right-nav li:last-child { margin-right: 0; }
 
-header nav#main-nav {
+header#header nav#main-nav {
 	background-color: #FFF;
 	color: #AAA;
 	font-family: 'Share Tech Mono', monospace;
@@ -51,16 +51,16 @@ header nav#main-nav {
 	font-size: 15px;
 }
 
-header nav#main-nav ul li {
+header#header nav#main-nav ul li {
 	float: left;
 	margin-right: 20px;
 }
 
-header nav#main-nav #main-left-nav {
+header#header nav#main-nav #main-left-nav {
 	padding: 15px 0 15px 20px;
 }
 
-header nav#main-nav #main-right-nav {
+header#header nav#main-nav #main-right-nav {
 	border-left: 1px solid #AAA;
 	padding: 15px 0 5px 20px;
 	display: grid;
@@ -68,31 +68,31 @@ header nav#main-nav #main-right-nav {
 	align-items: center;
 }
 
-header nav#main-nav .search svg {
+header#header nav#main-nav .search svg {
 	height: 16px;
 	fill: #AAA;
 }
 
-header nav#main-nav #tnw2020-countdown {
+header#header nav#main-nav #tnw2020-countdown {
 	display: grid;
 	grid-template-columns: repeat(3, auto);
 	align-items: center;
 }
 
-header nav#main-nav #tnw2020-countdown>*:not(:last-child) {
+header#header nav#main-nav #tnw2020-countdown>*:not(:last-child) {
 	margin-right: 20px;
 }
 
-header nav#main-nav #tnw2020-countdown svg {
+header#header nav#main-nav #tnw2020-countdown svg {
 	height: 14px;
 }
 
-header nav#main-nav #tnw2020-countdown .countdown {
+header#header nav#main-nav #tnw2020-countdown .countdown {
 	color: #FF4422;
 	font-size: 22px;
 }
 
-header nav#main-nav #tnw2020-countdown button {
+header#header nav#main-nav #tnw2020-countdown button {
 	background: #00CCCC;
 	border: none;
 	font-family: 'Lato', sans-serif;
@@ -105,7 +105,7 @@ header nav#main-nav #tnw2020-countdown button {
 	border-radius: 4px;
 }
 
-header .alert {
+header#header .alert {
 	background-color: #FFDD33;
 	padding: 10px 20px;
 	font-size: 12px;
@@ -194,6 +194,8 @@ section#hero article .category {
 	margin-bottom: 10px;
 }
 
+section#hero article header { grid-column: 1 / 3; }
+
 section#hero article header.story-header h1 {
 	font-size: 50px;
 	font-weight: bold;
@@ -218,10 +220,12 @@ section#hero article header.story-header svg {
 /* ADS */
 
 section.ad {
-	width: 100%;
+	max-width: 100%;
 	text-align: center;
-	margin: 20px 0;
+	margin: 20px;
 }
+
+section.ad img { max-width: 100%; }
 
 /* LATEST NEWS */
 
@@ -509,6 +513,7 @@ footer .social {
 
 footer .social li {
 	display: inline-block;
+	margin: 0 5px;
 	padding: 10px 10px 7px;
 	background-color: rgba(255,255,255,0.15);
 	border-radius: 50%;
@@ -519,7 +524,7 @@ footer .social svg {
 }
 
 footer .footer-nav {
-	padding: 0 0 px;
+	padding: 0 0 40px;
 	text-align: center;
 	font-family: 'Share Tech Mono', monospace;
 	text-transform: uppercase;
@@ -534,4 +539,47 @@ footer .copyright {
 	background-color: #000;
 	padding: 40px;
 	text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+	section#latest-news,
+	section#latest-funding,
+	section#news-categories,
+	section#latest-deals,
+	section.ad {
+		max-width: 100%;
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	header#header nav#main-nav ul li:nth-child(6),
+	header#header nav#main-nav ul li:nth-child(7) { display: none;}
+	header#header nav#main-nav #tnw2020-countdown .countdown { display: none; }
+
+	section#hero article svg.logo { height: 80px; }
+	section#hero article header.story-header h1 { font-size: 45px; }
+	section#hero article header.story-header h2 { font-size: 25px; }
+
+	section#latest-funding { grid-template-columns: repeat(3, 1fr); }
+	section#latest-funding article:nth-child(4) { display: none; }
+}
+
+@media screen and (max-width: 768px) {
+	header#header nav#main-nav #tnw2020-countdown { display: none; }
+	
+	section#latest-news,
+	section#latest-deals { grid-template-columns: repeat(3, 1fr); }
+	
+	section#latest-news h3,
+	section#latest-deals header { grid-column: 1 / 4; }
+	
+	section#latest-funding h3 { grid-column: 1 / 4; }
+	section#news-categories { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media screen and (max-width: 425px) {
+	header#header nav#top-nav,
+	header#header nav#main-nav #main-left-nav { display: none; }
 }
